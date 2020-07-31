@@ -153,10 +153,11 @@ def search():
         # cur.execute(sql1)
         # data = cur.fetchall()
         # db.close()
-        data={'status':'ok'}
+        data={'status':200,'msg':'ok'}
         result = jsonify(data)
     except Exception as e:
-        result = e
+        data={'status':404,'msg':'fail'}
+        result = jsonify(data)
     return result
 #项目启动入口
 if __name__ == '__main__':
